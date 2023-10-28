@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "bikereg-search"
+version = "0.1.0"
+description = "Application to provide a better visual search for bikereg evens"
+authors = ["gibbstp <gibbstp@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.8"
+pydantic = "^2.4.2"
+beautifulsoup4 = "^4.12.2"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
