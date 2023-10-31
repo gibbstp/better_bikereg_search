@@ -1,21 +1,23 @@
-from pydantic import BaseModel, HttpUrl
+from pydantic import BaseModel, HttpUrl, PositiveFloat
+from decimal import Decimal
 
 class Event(BaseModel):
-    EventCategories
+    EventCategories: 
     Distance: PositiveFloat
     EventAddress: str
     EventCity: str
-    EventDate
-    EventEndDate
-    EventId
-    EventName
-    EventNotes
-    EventState
-    EventTypes
+    TimeZone: int
+    EventDate: int
+    EventEndDate: int
+    EventId: int
+    EventName: str
+    EventNotes: str
+    EventState: str
+    EventTypes: list
     Eventurl: HttpUrl
     EventWebsite: HttpUrl
-    EventZip
-    EventLatitude
-    EventLongitude
-    EventRegCloseDate    
-    EventRegOpenDate
+    EventZip: int
+    EventLatitude: Decimal
+    EventLongitude: Decimal
+    EventRegCloseDate: int
+    EventRegOpenDate: int
