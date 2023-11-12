@@ -26,6 +26,7 @@ def request_api(url: str):
     """
     return requests.get(url).json()
 
+
 '''
 #TODO: remove this function. Rewrote code to make this repetitive. Leaving until certain. 
 def process_url_response(events_list: list, url_response) -> list:
@@ -56,15 +57,16 @@ def bike_reg_api(page_number: int = 0) -> tuple(list[dict], int):
     Returns:
     int: result_count: int
     """
-    
+
     url = api_url_generator(page_number=page_number)
 
     response = request_api(url=url)
 
-    #TODO: add logging for number of events in response for each page number
+    # TODO: add logging for number of events in response for each page number
     results_count = response["ResultCount"]
 
     return response["MatchingEvents"], results_count
+
 
 def start_api_calls() -> list[dict]:
     """
@@ -80,8 +82,8 @@ def start_api_calls() -> list[dict]:
 
     while results_count == 100:
         response_events, results_count = bike_reg_api(page_number=page_number)
-        
-        #TODO: add logging for length of list after extend
+
+        # TODO: add logging for length of list after extend
         events_list.extend(response_events)
 
         page_number += 1
@@ -91,7 +93,7 @@ def start_api_calls() -> list[dict]:
         time.sleep(0.5)
 
     return events_list
-    
+
 
 if __name__ == "__main__":
     start_api_calls()
