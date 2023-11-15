@@ -5,9 +5,9 @@ from datetime import datetime
 
 class Event(BaseModel):
     EventCategories: tuple
-    
-    #some events don't have an address
-    #therefore, defining default as None
+
+    # some events don't have an address
+    # therefore, defining default as None
     EventAddress: str = None
     EventCity: str
     TimeZone: int

@@ -24,24 +24,21 @@ def request_api(url: str):
     Returns:
     json: BikeReg API response in JSON format.
     """
-    
-    #TODO: add logging for requests reponse.
-    #TODO: add individual request exceptions. RequestException is too general and doesn't provide enough granulatiry
+
+    # TODO: add logging for requests reponse.
+    # TODO: add individual request exceptions. RequestException is too general and doesn't provide enough granulatiry
     try:
         response = requests.get(url).json()
-    
+
     except requests.exceptions.RequestException as e:
         SystemExit
-        
-    
+
+
 def api_error(api_response: requests.Response):
     """
     API call error handling
-    
+
     #TODO: add more granularity to errors handling"""
-    
-    
-    
 
 
 '''
