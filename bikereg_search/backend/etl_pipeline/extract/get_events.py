@@ -24,7 +24,24 @@ def request_api(url: str):
     Returns:
     json: BikeReg API response in JSON format.
     """
-    return requests.get(url).json()
+    
+    #TODO: add logging for requests reponse.
+    #TODO: add individual request exceptions. RequestException is too general and doesn't provide enough granulatiry
+    try:
+        response = requests.get(url).json()
+    
+    except requests.exceptions.RequestException as e:
+        SystemExit
+        
+    
+def api_error(api_response: requests.Response):
+    """
+    API call error handling
+    
+    #TODO: add more granularity to errors handling"""
+    
+    
+    
 
 
 '''
@@ -68,7 +85,7 @@ def bike_reg_api(page_number: int = 0) -> tuple(list[dict], int):
     return response["MatchingEvents"], results_count
 
 
-def start_api_calls() -> list[dict]:
+def main() -> list[dict]:
     """
     Perform an iterative loop to fetch data from the BikeReg API until the result count all results are collected.
 
@@ -96,4 +113,4 @@ def start_api_calls() -> list[dict]:
 
 
 if __name__ == "__main__":
-    start_api_calls()
+    main()

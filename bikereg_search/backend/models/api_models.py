@@ -5,8 +5,10 @@ from datetime import datetime
 
 class Event(BaseModel):
     EventCategories: tuple
-    Distance: PositiveFloat
-    EventAddress: str
+    
+    #some events don't have an address
+    #therefore, defining default as None
+    EventAddress: str = None
     EventCity: str
     TimeZone: int
     EventDate: datetime
