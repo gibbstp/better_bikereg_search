@@ -8,7 +8,7 @@ def convert_empty_string_to_numpy_nan(pd_series: pd.Series) -> pd.Series:
 
     series_mask = pd_series.str.isspace()
     pd_series[series_mask] = np.NaN
-    
+
     return pd_series
 
 

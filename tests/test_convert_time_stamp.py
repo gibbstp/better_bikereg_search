@@ -6,6 +6,7 @@ from bikereg_search.backend.etl_pipeline.transform.scripts.convert_time_stamp im
     convert_time_stamp,
 )
 
+
 def test_parse_timestamp():
     timestamp_string = "/Date(1698379200000-0400)/"
 

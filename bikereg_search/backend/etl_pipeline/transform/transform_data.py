@@ -28,8 +28,8 @@ dtypes = {
 event_df = pd.Dataframe(bikereg_event, dtypes=dtypes)
 
 
-#Event Address transformation
+# Event Address transformation
 event_df.EventAddress = convert_empty_string_to_numpy_nan(events_df.EventAddress)
 
-#Event City transformation
+# Event City transformation
 event_df.EventCity = convert_empty_string_to_numpy_nan(events_df.EventCity)
