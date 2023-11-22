@@ -1,11 +1,10 @@
 import datetime
 
-from bikereg_search.scripts.convert_time_stamp import (
+from bikereg_search.backend.etl_pipeline.transform.scripts.convert_time_stamp import (
     parse_timestamp,
     to_date,
     convert_time_stamp,
 )
-
 
 def test_parse_timestamp():
     timestamp_string = "/Date(1698379200000-0400)/"

@@ -8,6 +8,7 @@ class Event(BaseModel):
 
     # some events don't have an address
     # therefore, defining default as None
+    #TODO: verify this is the correct way to define default value
     EventAddress: str = None
     EventCity: str
     TimeZone: int
