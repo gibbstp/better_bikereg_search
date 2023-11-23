@@ -29,10 +29,9 @@ event_df = pd.DataFrame(bikereg_event, dtype=dtypes)
 
 
 # Event Address transformation
-event_df.EventAddress = convert_empty_string_to_numpy_nan(events_df.EventAddress)
+event_df.EventAddress = scripts.convert_empty_string_to_numpy_nan(event_df.EventAddress)
 
 # Event City transformation
-event_df.EventCity = convert_empty_string_to_numpy_nan(events_df.EventCity)
+event_df.EventCity = scripts.convert_empty_string_to_numpy_nan(event_df.EventCity)
 
-#Event Date transformation
-
+# Event Date transformation
