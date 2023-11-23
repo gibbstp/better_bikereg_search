@@ -16,7 +16,7 @@ dtypes = {
     "EventId": "int",
     "EventName": "str",
     "EventPermalink": "str",
-    "EventType": "str",
+    "EventTypes": "str",
     "EventWebsite": "str",
     "EventZip": "str",
     "Latitude": "float64",
@@ -25,7 +25,7 @@ dtypes = {
     "RegOpenDate": "str",
 }
 
-event_df = pd.Dataframe(bikereg_event, dtypes=dtypes)
+event_df = pd.DataFrame(bikereg_event, dtype=dtypes)
 
 
 # Event Address transformation
@@ -33,3 +33,6 @@ event_df.EventAddress = convert_empty_string_to_numpy_nan(events_df.EventAddress
 
 # Event City transformation
 event_df.EventCity = convert_empty_string_to_numpy_nan(events_df.EventCity)
+
+#Event Date transformation
+
